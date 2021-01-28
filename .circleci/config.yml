@@ -1,0 +1,10 @@
+version: 2.1
+
+orbs: 
+  rockstar: zmarkan/orbison@dev:1c8bd94
+
+workflows:
+  rock:
+    jobs:
+      rockstar/sing:
+        song: fizzbuzz.rock
