@@ -6,5 +6,5 @@ orbs:
 workflows:
   rock:
     jobs:
-      rockstar/sing:
-        song: fizzbuzz.rock
+      - rockstar/sing:
+          song: fizzbuzz.rock
