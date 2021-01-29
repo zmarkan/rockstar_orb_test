@@ -36,10 +36,10 @@ commands:
 jobs:
   perform:
     executor: default
-  steps:
-    - hire_satriani
-    - run:
-        command: rockstar << parameters.song >>
+    steps:
+      - hire_satriani
+      - run:
+          command: rockstar << parameters.song >>
 
 
 
