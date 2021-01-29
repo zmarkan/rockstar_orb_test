@@ -27,7 +27,7 @@ commands:
     steps:
       - run:
           command: |
-            git clone https://github.com/RockstarLang/rockstar ~rockstar
+            git clone https://github.com/RockstarLang/rockstar ~/rockstar
             cd ~/rockstar/satriani
             npm install
             alias rockstar="node ~/rockstar/satriani/rockstar"
