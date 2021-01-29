@@ -27,10 +27,10 @@ commands:
     steps:
       - run:
           command: |
-            git clone https://github.com/RockstarLang/rockstar /rockstar
-            cd /rockstar/satriani
+            git clone https://github.com/RockstarLang/rockstar ~rockstar
+            cd ~/rockstar/satriani
             npm install
-            alias rockstar="node /rockstar/satriani/rockstar"
+            alias rockstar="node ~/rockstar/satriani/rockstar"
 
 
 jobs:
@@ -43,6 +43,7 @@ jobs:
         description: "Which Rockstar program you wish to sing?"
 
     steps:
+      - checkout
       - hire_satriani
       - run:
           command: rockstar << parameters.song >>
