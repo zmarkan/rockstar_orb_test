@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs: 
-  orbison: zmarkan/orbison@dev:f5503ea
+  orbison: zmarkan/orbison@dev:019177d
 
 workflows:
   rock:
