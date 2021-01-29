@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs: 
-  rockstar: zmarkan/orbison@dev:1c8bd94
+  orbison: zmarkan/orbison@dev:1c8bd94
 
 executors:
   default:
