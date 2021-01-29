@@ -1,63 +1,10 @@
 version: 2.1
 
 orbs: 
-  orbison: zmarkan/orbison@dev:1c8bd94
-
-executors:
-  default:
-    description: >
-      This is a sample executor using Docker and Node.
-    docker:
-      - image: 'cimg/node:<<parameters.tag>>'
-    parameters:
-      tag:
-        default: lts
-        description: >
-          Pick a specific circleci/node image variant:
-          https://hub.docker.com/r/cimg/node/tags
-        type: string
-
-commands:
-  hire_satriani:
-    description: >
-      This command hire Satriani for us to play Rockstar commands (installs the Satriani node package)
-      
-    # What will this command do?
-    # Descriptions should be short, simple, and clear.
-    steps:
-      - run:
-          command: |
-            git clone https://github.com/RockstarLang/rockstar ~/rockstar
-            cd ~/rockstar/satriani
-            npm install
-            mkdir ~/bin
-            touch ~/bin/rockstar
-            echo -e '#!/bin/bash \nnode ~/rockstar/satriani/rockstar $1' >> ~/bin/rockstar
-            chmod +x ~/bin/rockstar
-            source ~/.bashrc          
-
-jobs:
-  perform:
-    executor: default
-
-    parameters:
-      song:
-        type: string
-        description: "Which Rockstar program you wish to sing?"
-
-    steps:
-      - checkout
-      - hire_satriani
-      - run:
-          command: rockstar << parameters.song >>
-
-
+  orbison: zmarkan/orbison@dev:f5503ea
 
 workflows:
   rock:
     jobs:
-      - perform:
+      - orbison/perform:
           song: fizzbuzz.rock
-
-      # - rockstar/sing:
-          # song: fizzbuzz.rock
