@@ -36,6 +36,12 @@ commands:
 jobs:
   perform:
     executor: default
+
+    parameters:
+      song:
+        type: string
+        description: "Which Rockstar program you wish to sing?"
+
     steps:
       - hire_satriani
       - run:
