@@ -33,6 +33,7 @@ commands:
             mkdir ~/bin
             touch ~/bin/rockstar
             echo -e '#!/bin/bash \nnode ~/rockstar/satriani/rockstar $1' >> ~/bin/rockstar
+            chmod +x ~/bin/rockstar
             source ~/.bashrc          
 
 jobs:
